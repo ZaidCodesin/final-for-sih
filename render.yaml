@@ -1,0 +1,16 @@
+﻿services:
+  - type: web
+    name: final-for-sih
+    runtime: node
+    plan: free
+    buildCommand: npm ci --omit=dev && npm run fetch-voice-model
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.11.0
+      - key: NODE_ENV
+        value: production
+      - key: DEMO_ACCOUNTS
+        value: "true"
+
