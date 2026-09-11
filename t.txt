@@ -1,0 +1,97 @@
+﻿
+> protect@1.0.0 test
+> node test-regression.js
+
+Wiping existing demo data atomically (seed 26186, anchor 2026-09-11)...
+Generating 150 personnel with six months of simulated history...
+Seed complete ΓåÆ personnel: 150  hr_events: 1188  checkins: 6857  assessments: 104  support_cases: 6  case_events: 21  org_actions: 4
+Wiping existing demo data atomically (seed 26186, anchor 2026-09-11)...
+Generating 150 personnel with six months of simulated history...
+Seed complete ΓåÆ personnel: 150  hr_events: 1188  checkins: 6857  assessments: 104  support_cases: 6  case_events: 21  org_actions: 4
+PASS repeat seed removes old support cases before IDs are reused
+PASS repeat seed removes old private case notes
+PASS deterministic seed restores the same connected case fixture count
+PASS demo identity maps consistently to Rahul Verma
+PASS demo Personnel aggregate contribution starts on and remains user-controllable
+PASS demo Personnel has 60 substantial private reflections including completed-goal days
+node.exe : (node:36844) ExperimentalWarning: SQLite is an experimental feature and 
+might change at any time
+At line:1 char:1
++ & "C:\Users\zaid\AppData\Local\hermes\node/node.exe" "C:\Users\zaid\A ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:36844) Ex...nge at any time:String 
+   ) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS content security policy is active
+PASS clickjacking protection is active
+PASS API labels the prototype as a demo environment
+PASS sepoy.demo login
+PASS welfare login
+PASS commander login
+PASS crpf100002 login
+PASS any seeded personnel can sign in with a case-insensitive service ID
+PASS Personnel Home is private-first and does not expose a support-priority score
+PASS Personnel Home uses connected profile, work, trend and insight data
+PASS 30-second mood/stress/sleep/energy check-in saves
+PASS check-in event updates Progress and includes association limits
+PASS WHO-5 scoring works end to end
+PASS assessment history preserves correct display direction
+PASS private multilingual journal entry saves
+PASS private Hindi/Hinglish journal analysis is Unicode-aware and labelled experimental
+PASS Personnel can create a support request with field-level sharing
+PASS Personnel receives connected case status and exact shared-field receipt
+PASS Welfare Support Queue receives the sourced Personnel request
+PASS Welfare receives selected authorized context
+PASS unselected assessments and private journal content do not cross the case boundary
+PASS Welfare can contact Personnel and schedule follow-up
+PASS Welfare update reflects back to Personnel
+PASS case workflow rejects an invalid backward transition
+PASS server rejects every attempt to include private Journal data in a support request
+PASS Personnel can submit a tracked record review
+PASS record reviews remain separate from support cases
+PASS Welfare can begin a record review
+PASS Personnel can turn aggregate contribution off
+PASS Commander voluntary aggregate enforces and reflects affirmative consent
+PASS Commander receives explainable seven-day indicators without fake probability
+PASS Commander payload contains conditions, never people or case files
+PASS Commander Overview and heatmap share one server-derived unit condition
+PASS organizational action stores the same unit baseline shown in Units
+PASS Commander can move an organizational action into progress
+PASS intervention can record a clearly labelled simulated 14-day outcome
+PASS Welfare insights are actionable workflow measures
+PASS scheduled case appears in Follow-ups
+PASS commander blocked from Welfare cases
+PASS commander blocked from person records
+PASS commander explicit journal probe is forbidden
+PASS welfare explicit journal probe is forbidden
+PASS welfare blocked from Commander aggregates
+PASS personnel blocked from Welfare queue
+PASS personnel blocked from Commander aggregates
+PASS legacy unrestricted Welfare person route is retired
+PASS disciplinary history never raises an indicator
+PASS private voluntary data is excluded unless a caller explicitly authorizes it
+PASS voice chunk merge drops the overlapped tail instead of repeating it
+PASS voice chunk merge keeps new words when tails differ
+PASS voice guard drops exact repeats
+PASS voice guard drops contained repeats (the 5x phone bug)
+PASS voice guard drops near-identical re-hearings
+PASS voice guard keeps genuinely new phrases
+PASS voice guard collapses in-chunk word loops
+PASS voice auto language lets Whisper detect Hindi/English/Hinglish
+PASS voice Hindi selector maps to the Whisper Hindi hint
+PASS voice English selector maps to the Whisper English hint
+PASS voice mic denial is classified for guided recovery
+PASS voice missing mic is classified for guided recovery
+PASS voice busy mic is classified for guided recovery
+PASS negated emotion ("not angry") is never counted as anger
+PASS affirmed positive emotion ("very happy") is counted
+PASS mindset positive side reflects the affirmed happy mood
+PASS Hindi negation (nahi gussa) is never counted as anger
+PASS Hindi affirmed emotion (khush) is counted
+PASS Hinglish postfix negation (gussa nahi) is never counted as anger
+PASS Hinglish positive clause after negation is still counted
+PASS Hinglish postfix negation handles one intervening emphasis word
+PASS non-negated anger is still counted normally
+ALL REGRESSIONS PASSED
