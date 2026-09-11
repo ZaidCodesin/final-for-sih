@@ -1,20 +1,20 @@
 {
-    "name": "final-for-sih",
-    "version": "1.0.0",
-    "description": "AI-Based Predictive Personnel Stress and Welfare Monitoring System for Uniformed Forces (SIH 26186)",
-    "main": "server.js",
-    "scripts": {
-        "start": "node server.js",
-        "seed": "node lib/seed.js",
-        "fetch-voice-model": "node lib/fetch-voice-model.js",
-        "check": "node --check server.js && node --check public/app.js && node --check public/voice-worker.js && node --check lib/voice-text.js && node --check lib/fetch-voice-model.js",
-        "test": "node test-regression.js",
-        "verify": "npm run check && npm test"
-    },
-    "dependencies": {
-        "express": "^4.19.2"
-    },
-    "engines": {
-        "node": ">=22.11.0"
-    }
+  "name": "protect",
+  "version": "1.0.0",
+  "description": "AI-Based Predictive Personnel Stress and Welfare Monitoring System for Uniformed Forces (SIH 26186)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node lib/seed.js",
+    "fetch-voice-model": "node lib/fetch-voice-model.js",
+    "check": "node --check server.js && node --check public/app.js && node --check public/voice-worker.js && node --check lib/voice-text.js && node --check lib/fetch-voice-model.js",
+    "test": "node test-regression.js",
+    "verify": "npm run check && npm test"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=22.11.0"
+  }
 }

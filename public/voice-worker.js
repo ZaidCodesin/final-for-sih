@@ -1,5 +1,5 @@
-'use strict';
-/* SENTINEL on-device journal voice worker — real AI speech-to-text in the page.
+﻿'use strict';
+/* ProtecT on-device journal voice worker â€” real AI speech-to-text in the page.
  *
  * Runs the vendored Transformers.js runtime + quantized Whisper model off the
  * main thread. The main thread streams 16 kHz mono PCM chunks here; this worker

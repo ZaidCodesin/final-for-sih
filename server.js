@@ -1,6 +1,6 @@
-'use strict';
-/* SENTINEL — AI-Based Predictive Personnel Stress & Welfare Monitoring System
- * SIH 26186 · MHA / CRPF · Role-based access, privacy-first design.
+﻿'use strict';
+/* ProtecT â€” AI-Based Predictive Personnel Stress & Welfare Monitoring System
+ * SIH 26186 Â· MHA / CRPF Â· Role-based access, privacy-first design.
  */
 const express = require('express');
 const crypto = require('crypto');
@@ -29,7 +29,7 @@ const todayStr = () => new Date().toISOString().slice(0, 10);
 
 // auto-seed demo data on fresh deploys (e.g. Render free tier with empty disk)
 if (db.prepare('SELECT COUNT(*) c FROM personnel').get().c === 0) {
-  console.log('Empty database detected — seeding demo data...');
+  console.log('Empty database detected â€” seeding demo data...');
   require('./lib/seed');
   console.log('Running initial risk pipeline...');
   runPipeline();
@@ -200,17 +200,17 @@ app.post('/api/register', (req, res) => {
   const password = String(b.password || '');
   const fail = m => { attempt.count++; loginAttempts.set(key, attempt); return send(res, 400, { error: m }); };
 
-  if (name.length < 2 || name.length > 80) return fail('Enter your full name (2–80 characters).');
-  if (!/^[A-Za-z0-9-]{4,20}$/.test(forceId)) return fail('Service ID must be 4–20 letters, numbers or dashes.');
+  if (name.length < 2 || name.length > 80) return fail('Enter your full name (2â€“80 characters).');
+  if (!/^[A-Za-z0-9-]{4,20}$/.test(forceId)) return fail('Service ID must be 4â€“20 letters, numbers or dashes.');
   if (!RANKS.includes(rank)) return fail('Select a valid rank.');
   if (password.length < 8 || password.length > 128 || !/[A-Za-z]/.test(password) || !/\d/.test(password))
     return fail('Password must be 8+ characters and include letters and numbers.');
 
   let finalUnitId = null;
   if (newUnit) {
-    if (newUnit.length < 2 || newUnit.length > 60) return fail('Unit name must be 2–60 characters.');
+    if (newUnit.length < 2 || newUnit.length > 60) return fail('Unit name must be 2â€“60 characters.');
     if (db.prepare('SELECT id FROM units WHERE name = ? COLLATE NOCASE').get(newUnit))
-      return fail('That unit already exists — select it from the list instead.');
+      return fail('That unit already exists â€” select it from the list instead.');
     finalUnitId = Number(db.prepare('INSERT INTO units (name, region) VALUES (?,?)').run(newUnit, '').lastInsertRowid);
   } else {
     if (!Number.isInteger(unitId) || !db.prepare('SELECT id FROM units WHERE id = ?').get(unitId))
@@ -264,7 +264,7 @@ app.get('/api/version', (_req, res) => {
 app.get('/api/health', (_req, res) => {
   res.setHeader('Cache-Control', 'no-store');
   send(res, 200, { status: 'ok', version: APP_VERSION, demo_mode: DEMO_MODE,
-    label: 'SENTINEL prototype service' });
+    label: 'ProtecT prototype service' });
 });
 
 /* ==== risk pipeline & API routes appended below ==== */
@@ -376,7 +376,7 @@ function assessmentView(row, includeAnswers = false) {
     raw_score: Number(raw), display_score: Number(display), max_score: spec.maxScore,
     level: row.level || '', urgent: !!row.urgent,
     instrument_version: row.instrument_version || 'legacy-prototype',
-    disclaimer: 'Screening tool — not a diagnosis.'
+    disclaimer: 'Screening tool â€” not a diagnosis.'
   };
   if (includeAnswers) {
     try { out.answers = JSON.parse(row.answers || '[]'); } catch { out.answers = []; }
@@ -514,7 +514,7 @@ function personalInsight(checkins, workload) {
   return {
     text,
     basis: [`${checkins.length} voluntary check-in${checkins.length === 1 ? '' : 's'}`, `${workload.records.length} recent work record${workload.records.length === 1 ? '' : 's'}`],
-    disclaimer: 'Personal observed pattern — not a diagnosis or proof of causation.'
+    disclaimer: 'Personal observed pattern â€” not a diagnosis or proof of causation.'
   };
 }
 
@@ -621,7 +621,7 @@ app.get('/api/personnel/progress', requireAuth(['personnel']), (req, res) => {
     work_relationship: {
       text: relationshipText,
       basis: { overtime_days: onLongDuty.length, comparison_days: otherDays.length },
-      disclaimer: 'Observed association — not proof of causation.'
+      disclaimer: 'Observed association â€” not proof of causation.'
     }
   });
 });
@@ -632,7 +632,7 @@ app.post('/api/my-data/correction', requireAuth(['personnel']), (req, res) => {
   const message = String(req.body && req.body.message || '').trim();
   if (!pid) return send(res, 400, { error: 'No personnel record linked' });
   if (!['workload', 'leave', 'deployment', 'profile', 'other'].includes(category) || message.length < 10 || message.length > 1000)
-    return send(res, 400, { error: 'Choose a category and provide 10–1000 characters' });
+    return send(res, 400, { error: 'Choose a category and provide 10â€“1000 characters' });
   db.prepare('INSERT INTO data_corrections (personnel_id, category, message, created_at) VALUES (?,?,?,?)')
     .run(pid, category, message, new Date().toISOString());
   audit(req.user, 'request_data_correction', pid, category);
@@ -677,7 +677,7 @@ app.get('/api/personnel/:id', requireAuth(['welfare']), (_req, res) => {
 /* ---------------- private reflective journal (merged from seven50) ----------------
  * STRICTLY PRIVATE: readable/writable only by the owning personnel account.
  * Journal content is NEVER returned to welfare/commander roles and is NOT an
- * input to the risk engine — this is the personnel's own space. */
+ * input to the risk engine â€” this is the personnel's own space. */
 const J_GOAL = 150, J_BLUE = 100, J_STREAK_MIN = 100;
 function jWords(t) { t = String(t || '').trim(); return t ? t.split(/\s+/).length : 0; }
 
@@ -735,7 +735,7 @@ app.get('/api/journal/overview', requireAuth(['personnel']), (req, res) => {
     const dt = new Date(); dt.setUTCDate(dt.getUTCDate() - i);
     const w = map.get(dt.toISOString().slice(0, 10));
     if (w !== undefined && w >= J_STREAK_MIN) streak++;
-    else if (i === 0) continue; // today not written yet — don't break the streak view
+    else if (i === 0) continue; // today not written yet â€” don't break the streak view
     else break;
   }
   const totals = db.prepare('SELECT COUNT(*) days, COALESCE(SUM(words),0) tw FROM journal_entries WHERE personnel_id = ?').get(pid);
@@ -1084,7 +1084,7 @@ app.post('/api/commander/actions', requireAuth(['commander']), (req, res) => {
   const title = String(b.title || '').trim(), evidence = String(b.evidence || '').trim();
   const response = String(b.suggested_response || '').trim(), owner = String(b.owner || '').trim();
   const reviewDate = String(b.review_date || '').trim();
-  if (title.length < 3 || title.length > 120) return send(res, 400, { error: 'Title must be 3–120 characters' });
+  if (title.length < 3 || title.length > 120) return send(res, 400, { error: 'Title must be 3â€“120 characters' });
   if (evidence.length < 3 || evidence.length > 1000) return send(res, 400, { error: 'Add concise supporting evidence' });
   if (response.length < 3 || response.length > 1000) return send(res, 400, { error: 'Add a suggested organizational response' });
   if (owner.length < 2 || owner.length > 100) return send(res, 400, { error: 'Add an action owner' });
@@ -1135,7 +1135,7 @@ function updateOrgAction(req, res) {
     db.prepare(`UPDATE org_actions SET ${allKeys.map(key => `${key}=?`).join(',')} WHERE id=?`)
       .run(...allKeys.map(key => updates[key]), current.id);
     if (updates.status && updates.status !== current.status)
-      addOrgActionEvent(current.id, req.user.id, 'status_changed', `${current.status} → ${updates.status}`);
+      addOrgActionEvent(current.id, req.user.id, 'status_changed', `${current.status} â†’ ${updates.status}`);
     else addOrgActionEvent(current.id, req.user.id, 'details_updated', 'Action details updated');
     audit(req.user, 'org_action_updated', null, `Action #${current.id}`);
   });
@@ -1433,11 +1433,11 @@ app.get('/api/welfare/cases/:id', requireAuth(['welfare']), (req, res) => {
       status: c.status, next_action: c.next_action, follow_up_due: c.follow_up_due,
       last_contact_at: c.last_contact_at, first_response_at: c.first_response_at,
       created_at: c.created_at, resolved_at: c.resolved_at },
-    person: { id: c.pid, rank: c.rank, name: c.name, force_id: c.force_id, unit: c.unit || '—' },
+    person: { id: c.pid, rank: c.rank, name: c.name, force_id: c.force_id, unit: c.unit || 'â€”' },
     assigned_officer: assigned,
     shared_context: { selected: share.selected || {}, snapshot: share.snapshot || {},
       granted_at: share.granted_at || null, withdrawn_at: share.withdrawn_at || null,
-      journal: { shared: false, label: 'Locked — never shared' } },
+      journal: { shared: false, label: 'Locked â€” never shared' } },
     consented_context: share.snapshot || null,
     work_context: share.snapshot?.work_context || null,
     timeline,
@@ -1481,10 +1481,10 @@ app.post('/api/welfare/cases/:id', requireAuth(['welfare']), (req, res) => {
   inTransaction(() => {
     if (keys.length) db.prepare(`UPDATE support_cases SET ${keys.map(k => k + '=?').join(', ')} WHERE id = ?`)
       .run(...keys.map(k => updates[k]), c.id);
-    if (b.status !== undefined && b.status !== c.status) addCaseEvent(c.id, req.user.id, 'status_changed', `${c.status} → ${b.status}`);
+    if (b.status !== undefined && b.status !== c.status) addCaseEvent(c.id, req.user.id, 'status_changed', `${c.status} â†’ ${b.status}`);
     if (b.next_action !== undefined) addCaseEvent(c.id, req.user.id, 'next_action_updated', updates.next_action);
     if (b.follow_up_due !== undefined) addCaseEvent(c.id, req.user.id, 'follow_up_scheduled', updates.follow_up_due || 'Cleared');
-    if (b.priority !== undefined && b.priority !== c.priority) addCaseEvent(c.id, req.user.id, 'priority_changed', `${c.priority} → ${b.priority}`);
+    if (b.priority !== undefined && b.priority !== c.priority) addCaseEvent(c.id, req.user.id, 'priority_changed', `${c.priority} â†’ ${b.priority}`);
     if (note) {
       db.prepare('INSERT INTO case_notes (case_id, author_id, note, at) VALUES (?,?,?,?)')
         .run(c.id, req.user.id, note.slice(0, 1000), new Date().toISOString());
@@ -1515,10 +1515,10 @@ app.get('/api/welfare/insights', requireAuth(['welfare']), (req, res) => {
   const open = rows.filter(row => row.status !== 'Resolved');
   const countBy = (items, key) => Object.fromEntries([...new Set(items.map(item => item[key] || 'Unspecified'))]
     .map(value => [value, items.filter(item => (item[key] || 'Unspecified') === value).length]));
-  const age = { '<24h': 0, '1–3 days': 0, '4–7 days': 0, '>7 days': 0 };
+  const age = { '<24h': 0, '1â€“3 days': 0, '4â€“7 days': 0, '>7 days': 0 };
   for (const row of open) {
     const hours = Math.max(0, (Date.now() - new Date(row.created_at).getTime()) / 3600000);
-    age[hours < 24 ? '<24h' : hours < 96 ? '1–3 days' : hours < 192 ? '4–7 days' : '>7 days']++;
+    age[hours < 24 ? '<24h' : hours < 96 ? '1â€“3 days' : hours < 192 ? '4â€“7 days' : '>7 days']++;
   }
   const responseHours = rows.filter(row => row.first_response_at).map(row =>
     Math.max(0, (new Date(row.first_response_at) - new Date(row.created_at)) / 3600000)).sort((a, b) => a - b);
@@ -1551,4 +1551,4 @@ app.use(express.static(path.join(__dirname, 'public'), {
     else res.setHeader('Cache-Control', 'public, max-age=300, must-revalidate');
   }
 }));
-app.listen(PORT, () => console.log(`SENTINEL running → http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`ProtecT running â†’ http://localhost:${PORT}`));

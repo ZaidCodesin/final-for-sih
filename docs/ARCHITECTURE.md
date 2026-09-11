@@ -1,6 +1,6 @@
-# SENTINEL architecture and trust model
+﻿# ProtecT architecture and trust model
 
-SENTINEL is a privacy-preserving welfare decision-support prototype for SIH PS26186. It connects personal reflection, voluntary wellbeing, authorized Welfare casework, and aggregate organizational action without treating them as one unrestricted dataset.
+ProtecT is a privacy-preserving welfare decision-support prototype for SIH PS26186. It connects personal reflection, voluntary wellbeing, authorized Welfare casework, and aggregate organizational action without treating them as one unrestricted dataset.
 
 ## What is implemented in the demo
 

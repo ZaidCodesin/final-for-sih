@@ -1,6 +1,6 @@
-﻿# SENTINEL â€” PS26186
+﻿# ProtecT â€” PS26186
 
-SENTINEL is a connected, privacy-preserving welfare decision-support prototype for Smart India Hackathon Problem Statement **26186**: â€œAI-Based Predictive Personnel Stress and Welfare Monitoring System for Uniformed Forces.â€
+ProtecT is a connected, privacy-preserving welfare decision-support prototype for Smart India Hackathon Problem Statement **26186**: â€œAI-Based Predictive Personnel Stress and Welfare Monitoring System for Uniformed Forces.â€
 
 It is designed around one loop:
 
@@ -150,5 +150,5 @@ A proposed force-controlled production designâ€”on-premise/intranet, approv
 
 ## Non-goals
 
-SENTINEL is not an AI therapist, psychiatric diagnostic system, face/voice emotion detector, personnel leaderboard, disciplinary tool, or channel for Commander access to private reflection or Welfare case notes.
+ProtecT is not an AI therapist, psychiatric diagnostic system, face/voice emotion detector, personnel leaderboard, disciplinary tool, or channel for Commander access to private reflection or Welfare case notes.
 

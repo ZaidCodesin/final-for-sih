@@ -1,18 +1,18 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>SENTINEL — Predictive Personnel Welfare</title>
+  <title>ProtecT â€” Predictive Personnel Welfare</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div id="login-view" class="public-shell">
     <header class="public-header">
-      <a class="brand" href="#" aria-label="SENTINEL home"><span class="brand-mark" aria-hidden="true">S</span><span><strong>SENTINEL</strong><small>Personnel welfare system</small></span></a>
-      <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme"><span aria-hidden="true">◐</span></button>
+      <a class="brand" href="#" aria-label="ProtecT home"><span class="brand-mark" aria-hidden="true">P</span><span><strong>ProtecT</strong><small>Personnel welfare system</small></span></a>
+      <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme"><span aria-hidden="true">â—</span></button>
     </header>
 
     <main class="access-layout">
@@ -20,10 +20,10 @@
         <p class="eyebrow">Privacy-preserving decision support</p>
         <h1 id="welcome-title">See pressure earlier.<br><span>Respond with care.</span></h1>
         <p class="lead">One connected system for private reflection, appropriate welfare support, and better organizational conditions.</p>
-        <ul class="trust-list" aria-label="SENTINEL privacy commitments">
-          <li><span aria-hidden="true">✓</span> Private journals remain personnel-only</li>
-          <li><span aria-hidden="true">✓</span> Welfare receives only authorized support context</li>
-          <li><span aria-hidden="true">✓</span> Command sees conditions, never case files</li>
+        <ul class="trust-list" aria-label="ProtecT privacy commitments">
+          <li><span aria-hidden="true">âœ“</span> Private journals remain personnel-only</li>
+          <li><span aria-hidden="true">âœ“</span> Welfare receives only authorized support context</li>
+          <li><span aria-hidden="true">âœ“</span> Command sees conditions, never case files</li>
         </ul>
       </section>
 
@@ -31,14 +31,14 @@
         <div id="portal-choice">
           <p class="eyebrow">Explore demo</p>
           <h2 id="demo-title">Choose a demo workspace</h2>
-          <p class="demo-notice">Demo environment — production access is role-authenticated.</p>
-          <button class="portal-row" type="button" data-portal="personnel"><span class="portal-icon" aria-hidden="true">P</span><span><strong>Personnel Demo</strong><small>Reflect, check in, and control sharing</small></span><span aria-hidden="true">→</span></button>
-          <button class="portal-row" type="button" data-portal="welfare"><span class="portal-icon" aria-hidden="true">W</span><span><strong>Welfare Officer Demo</strong><small>Coordinate support and follow-up</small></span><span aria-hidden="true">→</span></button>
-          <button class="portal-row" type="button" data-portal="commander"><span class="portal-icon" aria-hidden="true">C</span><span><strong>Commander Demo</strong><small>Improve unit conditions</small></span><span aria-hidden="true">→</span></button>
+          <p class="demo-notice">Demo environment â€” production access is role-authenticated.</p>
+          <button class="portal-row" type="button" data-portal="personnel"><span class="portal-icon" aria-hidden="true">P</span><span><strong>Personnel Demo</strong><small>Reflect, check in, and control sharing</small></span><span aria-hidden="true">â†’</span></button>
+          <button class="portal-row" type="button" data-portal="welfare"><span class="portal-icon" aria-hidden="true">W</span><span><strong>Welfare Officer Demo</strong><small>Coordinate support and follow-up</small></span><span aria-hidden="true">â†’</span></button>
+          <button class="portal-row" type="button" data-portal="commander"><span class="portal-icon" aria-hidden="true">C</span><span><strong>Commander Demo</strong><small>Improve unit conditions</small></span><span aria-hidden="true">â†’</span></button>
         </div>
 
         <form id="signin-form" class="hidden" novalidate>
-          <button id="portal-back" class="text-button" type="button">← Change demo</button>
+          <button id="portal-back" class="text-button" type="button">â† Change demo</button>
           <p id="portal-label" class="eyebrow"></p>
           <h2>Sign in</h2>
           <label for="li-user">Service ID or username</label>
@@ -47,12 +47,12 @@
           <input id="li-pass" type="password" autocomplete="current-password" required>
           <button id="li-btn" class="button primary full" type="submit">Sign in</button>
           <p id="li-err" class="form-message error hidden" role="alert"></p>
-          <button id="show-signup" class="text-button signup-link" type="button">New personnel? Create a demo account →</button>
-          <details class="demo-access"><summary>Demo credentials</summary><div id="demo-options"></div><p>Seeded IDs <code>CRPF100001</code>–<code>CRPF100150</code> use <code>demo123</code>.</p></details>
+          <button id="show-signup" class="text-button signup-link" type="button">New personnel? Create a demo account â†’</button>
+          <details class="demo-access"><summary>Demo credentials</summary><div id="demo-options"></div><p>Seeded IDs <code>CRPF100001</code>â€“<code>CRPF100150</code> use <code>demo123</code>.</p></details>
         </form>
 
         <form id="signup-form" class="hidden" novalidate>
-          <button id="signup-back" class="text-button" type="button">← Back to sign in</button>
+          <button id="signup-back" class="text-button" type="button">â† Back to sign in</button>
           <p class="eyebrow">Personnel demo</p>
           <h2>Create a demo account</h2>
           <label for="su-name">Full name</label><input id="su-name" maxlength="80" autocomplete="name" required>
@@ -71,23 +71,23 @@
 
   <div id="app-view" class="app-shell hidden">
     <aside class="sidebar">
-      <a class="brand sidebar-brand" href="#"><span class="brand-mark" aria-hidden="true">S</span><span><strong>SENTINEL</strong><small id="role-label">Workspace</small></span></a>
+      <a class="brand sidebar-brand" href="#"><span class="brand-mark" aria-hidden="true">P</span><span><strong>ProtecT</strong><small id="role-label">Workspace</small></span></a>
       <nav id="nav" class="side-nav" aria-label="Primary navigation"></nav>
-      <div class="sidebar-note"><span aria-hidden="true">◇</span><p id="sidebar-promise">Purpose-limited access</p></div>
+      <div class="sidebar-note"><span aria-hidden="true">â—‡</span><p id="sidebar-promise">Purpose-limited access</p></div>
     </aside>
 
     <div class="workspace">
       <header class="topbar">
-        <button id="mobile-menu" class="icon-button mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">☰</button>
+        <button id="mobile-menu" class="icon-button mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">â˜°</button>
         <div class="topbar-title"><span id="route-eyebrow">Workspace</span><strong id="route-title">Home</strong></div>
         <div class="topbar-actions">
           <span id="who" class="identity"></span>
-          <button class="icon-button" type="button" data-theme-toggle aria-label="Switch color theme"><span aria-hidden="true">◐</span></button>
+          <button class="icon-button" type="button" data-theme-toggle aria-label="Switch color theme"><span aria-hidden="true">â—</span></button>
           <button id="logout" class="button quiet" type="button">Sign out</button>
         </div>
       </header>
       <nav id="mobile-nav" class="mobile-nav hidden" aria-label="Mobile navigation"></nav>
-      <div id="banner" class="demo-banner" role="note">Demo environment · Simulated data · Production access is role-authenticated</div>
+      <div id="banner" class="demo-banner" role="note">Demo environment Â· Simulated data Â· Production access is role-authenticated</div>
 
       <main id="main-content" tabindex="-1">
         <section id="view-personnel-home" class="view hidden" aria-labelledby="personnel-home-title"><div id="personnel-home-content"></div></section>
@@ -103,24 +103,24 @@
                 <h1 id="assessments-title">Take a small assessment</h1>
                 <p>Start with five questions about the last two weeks. Your result is a screening aid, not a diagnosis.</p>
                 <div class="trust-row"><span>WHO-5</span><span>5 questions</span><span>About 1 minute</span></div>
-                <button class="button primary" type="button" data-start-asmt="WHO5">Start WHO-5 <span aria-hidden="true">→</span></button>
+                <button class="button primary" type="button" data-start-asmt="WHO5">Start WHO-5 <span aria-hidden="true">â†’</span></button>
                 <span id="who-last" class="subtle-note"></span>
               </div>
               <div class="assessment-mark" aria-hidden="true"><strong>5</strong><span>questions</span></div>
             </div>
             <div class="section-heading"><div><p class="eyebrow">Assessment library</p><h2>Choose what feels useful</h2><p>Validated screening tools, explained in plain language.</p></div></div>
             <div id="asmt-grid" class="assessment-grid"></div>
-            <section class="surface section-block" aria-labelledby="assessment-history-title"><div class="card-heading"><div><p class="eyebrow">Saved history</p><h2 id="assessment-history-title">Your assessment trend</h2></div><a class="text-link" href="#/personnel/journal/progress">See in Progress →</a></div><div id="asmt-history"></div></section>
+            <section class="surface section-block" aria-labelledby="assessment-history-title"><div class="card-heading"><div><p class="eyebrow">Saved history</p><h2 id="assessment-history-title">Your assessment trend</h2></div><a class="text-link" href="#/personnel/journal/progress">See in Progress â†’</a></div><div id="asmt-history"></div></section>
           </div>
           <section id="asmt-runner" class="assessment-runner hidden" aria-live="polite">
-            <button id="asmt-exit" class="text-button" type="button">← All assessments</button>
+            <button id="asmt-exit" class="text-button" type="button">â† All assessments</button>
             <div class="surface assessment-runner-card">
               <div class="card-heading"><div><p id="asmt-kind" class="eyebrow"></p><h2 id="asmt-title"></h2></div><span id="asmt-step" class="subtle-note"></span></div>
               <div class="progress-track" aria-hidden="true"><div id="asmt-progress-bar"></div></div>
               <p id="asmt-period" class="muted"></p>
               <h3 id="asmt-question" class="assessment-question"></h3>
               <div id="asmt-options" class="assessment-options"></div>
-              <div class="form-actions split"><button id="asmt-prev" class="button quiet" type="button">Back</button><button id="asmt-next" class="button primary" type="button" disabled>Next →</button></div>
+              <div class="form-actions split"><button id="asmt-prev" class="button quiet" type="button">Back</button><button id="asmt-next" class="button primary" type="button" disabled>Next â†’</button></div>
             </div>
             <p id="asmt-attribution" class="source-note"></p>
           </section>
@@ -128,7 +128,7 @@
         </section>
 
         <section id="view-journal" class="view journal-view hidden" aria-labelledby="journal-title">
-          <div class="page-heading compact"><div><p class="eyebrow">Private journal</p><h1 id="journal-title">A place that belongs to you</h1><p>Your entries and personal writing insights remain outside Welfare and Command.</p></div><span class="privacy-chip"><span aria-hidden="true">▣</span> Only you</span></div>
+          <div class="page-heading compact"><div><p class="eyebrow">Private journal</p><h1 id="journal-title">A place that belongs to you</h1><p>Your entries and personal writing insights remain outside Welfare and Command.</p></div><span class="privacy-chip"><span aria-hidden="true">â–£</span> Only you</span></div>
           <div class="journal-tabs" role="tablist" aria-label="Journal sections">
             <button class="journal-tab" type="button" role="tab" aria-controls="jr-pane-write" data-jr-pane="write">Write</button>
             <button class="journal-tab" type="button" role="tab" aria-controls="jr-pane-insights" data-jr-pane="insights">Daily Insights</button>
@@ -138,29 +138,29 @@
           <div id="jr-pane-write" class="journal-pane" role="tabpanel">
             <div class="journal-layout">
               <section class="surface journal-editor-card">
-                <div class="card-heading"><div><p class="eyebrow">Today’s reflection</p><h2 id="jr-entry-heading">Write privately</h2></div><span id="jr-save" class="save-status" role="status" aria-live="polite">Not saved yet</span></div>
+                <div class="card-heading"><div><p class="eyebrow">Todayâ€™s reflection</p><h2 id="jr-entry-heading">Write privately</h2></div><span id="jr-save" class="save-status" role="status" aria-live="polite">Not saved yet</span></div>
                 <div class="journal-actions">
-                  <button id="jr-mic" class="speak-button" type="button" aria-pressed="false" aria-label="Start private voice input"><span aria-hidden="true">●</span> Speak privately</button>
+                  <button id="jr-mic" class="speak-button" type="button" aria-pressed="false" aria-label="Start private voice input"><span aria-hidden="true">â—</span> Speak privately</button>
                   <label class="language-field" for="jr-lang"><span>Language</span><select id="jr-lang">
-                    <option value="auto">Hindi • English • Hinglish (auto)</option>
-                    <option value="en-IN">English (India)</option><option value="hi-IN">हिन्दी — Hindi</option>
-                    <option value="bn-IN">বাংলা — Bengali</option><option value="ta-IN">தமிழ் — Tamil</option><option value="te-IN">తెలుగు — Telugu</option>
-                    <option value="mr-IN">मराठी — Marathi</option><option value="gu-IN">ગુજરાતી — Gujarati</option><option value="kn-IN">ಕನ್ನಡ — Kannada</option>
-                    <option value="ml-IN">മലയാളം — Malayalam</option><option value="pa-IN">ਪੰਜਾਬੀ — Punjabi</option><option value="or-IN">ଓଡ଼ିଆ — Odia</option><option value="ur-PK">اردو — Urdu</option>
+                    <option value="auto">Hindi â€¢ English â€¢ Hinglish (auto)</option>
+                    <option value="en-IN">English (India)</option><option value="hi-IN">à¤¹à¤¿à¤¨à¥à¤¦à¥€ â€” Hindi</option>
+                    <option value="bn-IN">à¦¬à¦¾à¦‚à¦²à¦¾ â€” Bengali</option><option value="ta-IN">à®¤à®®à®¿à®´à¯ â€” Tamil</option><option value="te-IN">à°¤à±†à°²à±à°—à± â€” Telugu</option>
+                    <option value="mr-IN">à¤®à¤°à¤¾à¤ à¥€ â€” Marathi</option><option value="gu-IN">àª—à«àªœàª°àª¾àª¤à«€ â€” Gujarati</option><option value="kn-IN">à²•à²¨à³à²¨à²¡ â€” Kannada</option>
+                    <option value="ml-IN">à´®à´²à´¯à´¾à´³à´‚ â€” Malayalam</option><option value="pa-IN">à¨ªà©°à¨œà¨¾à¨¬à©€ â€” Punjabi</option><option value="or-IN">à¬“à¬¡à¬¼à¬¿à¬† â€” Odia</option><option value="ur-PK">Ø§Ø±Ø¯Ùˆ â€” Urdu</option>
                   </select></label>
                   <span id="jr-mic-status" class="muted" role="status" aria-live="polite"></span>
                   <span id="jr-voice-level" class="voice-level hidden" aria-hidden="true"><span id="jr-voice-level-bar"></span></span>
                 </div>
-                <p class="voice-privacy">Voice is transcribed on this device by private AI. SENTINEL stores the text you approve, never an audio recording, and nothing is uploaded.</p>
+                <p class="voice-privacy">Voice is transcribed on this device by private AI. ProtecT stores the text you approve, never an audio recording, and nothing is uploaded.</p>
                 <div class="prompt-row" aria-label="Optional writing prompts">
                   <span>Optional prompt:</span>
-                  <button type="button" data-journal-prompt="What is occupying my mind right now?">What’s on my mind?</button>
+                  <button type="button" data-journal-prompt="What is occupying my mind right now?">Whatâ€™s on my mind?</button>
                   <button type="button" data-journal-prompt="What felt difficult today?">What felt difficult?</button>
                   <button type="button" data-journal-prompt="What went better than expected?">What went well?</button>
                   <button type="button" data-journal-prompt="Did anything affect my sleep?">Sleep</button>
                 </div>
                 <label class="sr-only" for="jr-editor">Private journal entry</label>
-                <textarea id="jr-editor" placeholder="Write about your day, your thoughts, anything on your mind…"></textarea>
+                <textarea id="jr-editor" placeholder="Write about your day, your thoughts, anything on your mindâ€¦"></textarea>
                 <div id="jr-draft-wrap" class="review-box hidden">
                   <label for="jr-draft">Check this phrase before adding it</label>
                   <textarea id="jr-draft" rows="2"></textarea>
@@ -179,13 +179,13 @@
           </div>
 
           <div id="jr-pane-insights" class="journal-pane hidden" role="tabpanel">
-            <div class="section-heading split-heading"><div><p class="eyebrow">Private reflection analytics</p><h2>Today, in your own words</h2><p>Experimental personal patterns—not a diagnosis and never an organizational signal.</p></div><label for="jr-an-date">Entry date<select id="jr-an-date"></select></label></div>
+            <div class="section-heading split-heading"><div><p class="eyebrow">Private reflection analytics</p><h2>Today, in your own words</h2><p>Experimental personal patternsâ€”not a diagnosis and never an organizational signal.</p></div><label for="jr-an-date">Entry date<select id="jr-an-date"></select></label></div>
             <div id="jr-an-empty" class="empty-state hidden"><h3>No insights yet</h3><p>Start with a one-minute reflection.</p></div>
             <div id="jr-an-content">
               <div id="jr-an-summary" class="insight-lead"></div>
               <div id="jr-an-story" class="story-grid"></div>
               <section class="surface section-block"><div class="card-heading"><div><span class="experimental-label">Experimental Personal Insight</span><h2>Writing activity</h2></div></div><canvas id="jr-an-speed" width="1000" height="235" role="img" aria-label="Writing activity over time"></canvas><p id="jr-an-speed-note" class="source-note"></p><details class="explanation"><summary>What does this mean?</summary><p>Based on word-count samples during this entry. Pauses may reflect thinking, interruption, or editing; they are not a wellbeing measure.</p></details></section>
-              <section class="surface section-block"><div class="card-heading"><div><p class="eyebrow">Your writing style</p><h2>Mindset while writing</h2></div></div><div id="jr-an-mindset" class="donut-grid"></div><details class="explanation"><summary>How is this calculated?</summary><p>Private local language patterns count relevant words and account for common English, Hindi and Hinglish negations such as “not angry” and “gussa nahi.” These labels remain exploratory, can miss complex context or sarcasm, and are not personality or clinical assessments.</p></details></section>
+              <section class="surface section-block"><div class="card-heading"><div><p class="eyebrow">Your writing style</p><h2>Mindset while writing</h2></div></div><div id="jr-an-mindset" class="donut-grid"></div><details class="explanation"><summary>How is this calculated?</summary><p>Private local language patterns count relevant words and account for common English, Hindi and Hinglish negations such as â€œnot angryâ€ and â€œgussa nahi.â€ These labels remain exploratory, can miss complex context or sarcasm, and are not personality or clinical assessments.</p></details></section>
               <div class="analysis-grid">
                 <section class="surface insight-box"><span class="experimental-label">Experimental</span><h2>Feeling mostly</h2><div id="jr-an-feelings" class="word-bars"></div><details class="explanation"><summary>What does this mean?</summary><p>Counts emotion-related words in this entry. Context, sarcasm and multilingual phrasing can change the meaning.</p></details></section>
                 <section class="surface insight-box"><span class="experimental-label">Experimental</span><h2>Thinking mostly about</h2><div id="jr-an-topics" class="word-bars"></div><details class="explanation"><summary>What does this mean?</summary><p>Groups repeated private keywords into broad themes to help you revisit what occupied your attention.</p></details></section>
@@ -193,7 +193,7 @@
                 <section class="surface insight-box"><span class="experimental-label">Experimental</span><h2>Primary sense</h2><div id="jr-an-senses" class="word-bars"></div><details class="explanation"><summary>What does this mean?</summary><p>Counts sensory language such as seeing, hearing or feeling. It is a writing observation only.</p></details></section>
               </div>
               <section class="surface insight-box"><span class="experimental-label">Experimental</span><h2>Us and them</h2><div id="jr-an-pronouns" class="word-bars compact"></div><details class="explanation"><summary>What does this mean?</summary><p>Compares pronoun use in this entry. It cannot determine relationships, belonging or conflict.</p></details></section>
-              <p class="privacy-footnote">Private keyword patterns · Only you can see them · Not used for prediction or casework</p>
+              <p class="privacy-footnote">Private keyword patterns Â· Only you can see them Â· Not used for prediction or casework</p>
             </div>
           </div>
 
